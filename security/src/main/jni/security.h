@@ -46,4 +46,10 @@ char touppercase(char in) {
     return in;
 }
 
+static void static_helloJni(JNIEnv *env) {
+    jclass clazz = env->FindClass("com/mrljdx/security/SecurityUtils");
+    jmethodID mid = env->GetStaticMethodID(clazz, "helloFromJNI", "()V");
+    env->CallStaticVoidMethod(clazz, mid);
+}
+
 #endif //SECURITY_H

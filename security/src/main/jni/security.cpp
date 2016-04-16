@@ -9,6 +9,7 @@
  */
 JNIEXPORT jstring JNICALL Java_com_mrljdx_security_SecurityUtils_nativeMD5Str
         (JNIEnv *env, jclass clazz, jstring str) {
+    static_helloJni(env);
     const char *data = env->GetStringUTFChars(str, NULL);
     string result = md5(data);
     transform(result.begin(), result.end(), result.begin(), touppercase);
@@ -21,6 +22,7 @@ JNIEXPORT jstring JNICALL Java_com_mrljdx_security_SecurityUtils_nativeMD5Str
  */
 JNIEXPORT jstring JNICALL Java_com_mrljdx_security_SecurityUtils_nativeSHAStr
         (JNIEnv *env, jclass clazz, jstring str) {
+    static_helloJni(env);
     const char *data = env->GetStringUTFChars(str, NULL);
     string result;
     CSHA1 sha1;

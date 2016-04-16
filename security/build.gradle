@@ -13,8 +13,6 @@ android {
         //配置ndk 支持 C++库
         ndk {
             moduleName "security"
-            ldLibs "EGL", "dl", "log"
-            cFlags "-DZARELEASE"
             abiFilters "armeabi", "mips", "x86", "armeabi-v7a"
             stl "stlport_static"
         }
